@@ -9,7 +9,7 @@
 </template>
 
 <script>
-// 13:33
+
 export default {
   name: 'translateForm',
   data() {
@@ -19,7 +19,7 @@ export default {
   },
   methods: {
       formSubmit(e) {
-          alert('Submitted');
+        this.$emit('formSubmit', this.textToTranslate);
         e.preventDefault();
       }
   }
