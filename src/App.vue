@@ -11,6 +11,8 @@
 <script>
 import TranslateForm from './components/TranslateForm'
 import TranslateOutput from './components/TranslateOutput'
+let YANDEX_API_KEY = `trnsl.1.1.20180309T060612Z.c54c874b1f4a08ec.90649d2f148c08384a4adfa117efef65415e9c71
+`;
 export default {
   name: 'App',
   components: {
@@ -23,8 +25,8 @@ export default {
     }
   },
   methods: {
-    translateText: function(text){
-      this.$http.get(`https://translate.yandex.net/api/v1.5/tr.json/translate?key=${YANDEX_API_KEY}&lang=ru&text=${text}`)
+    translateText: function(text, language){
+      this.$http.get(`https://translate.yandex.net/api/v1.5/tr.json/translate?key=${YANDEX_API_KEY}&lang=${language}&text=${text}`)
       .then((res) => {
         this.translatedText = res.body.text[0];
       })
