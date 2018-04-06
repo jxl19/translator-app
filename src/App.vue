@@ -1,7 +1,8 @@
 <template>
-  <div id="app">
+  <div class="text-center" id="app">
     <h1>Word Translator</h1>
     <h5>Powered By Vue.js</h5>
+    <hr>
     <!-- onsubmit runs translate text method made below -->
     <TranslateForm v-on:formSubmit="translateText"></TranslateForm>
     <TranslateOutput v-text="translatedText"></TranslateOutput>
@@ -11,8 +12,6 @@
 <script>
 import TranslateForm from './components/TranslateForm'
 import TranslateOutput from './components/TranslateOutput'
-let YANDEX_API_KEY = `trnsl.1.1.20180309T060612Z.c54c874b1f4a08ec.90649d2f148c08384a4adfa117efef65415e9c71
-`;
 export default {
   name: 'App',
   components: {
@@ -36,7 +35,7 @@ export default {
 </script>
 
 <style>
-#app {
-
+body{
+  background:#fefefe,
 }
 </style>
